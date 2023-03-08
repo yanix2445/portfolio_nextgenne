@@ -23,7 +23,7 @@ const ContactForm = () => {
       .catch((error) => alert(error));
   };
 
-  const encode = (data: { [x: string]: string | number | boolean; name?: string; email?: string; message?: string; "form-name"?: string; }) => {
+  const encode = (data: any) => {
     return Object.keys(data)
       .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
       .join('&');
