@@ -7,9 +7,10 @@ const ContactForm = () => {
     message: '',
   });
 
-  const handleInputChange = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
+  
 
   const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
