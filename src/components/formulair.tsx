@@ -7,6 +7,8 @@ const ContactForm = () => {
     message: '',
   });
 
+  const [showModal, setShowModal] = useState(false);
+
   const handleInputChange = (event: any) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
@@ -18,7 +20,12 @@ const ContactForm = () => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...formData }),
     })
-      .then(() => alert('Success!'))
+      .then(() => {
+        setShowModal(true);
+        setTimeout(() => {
+          setShowModal(false);
+        }, 2000);
+      })
       .catch((error) => alert(error));
   };
 
