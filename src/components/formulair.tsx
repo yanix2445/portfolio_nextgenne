@@ -7,11 +7,11 @@ const ContactForm = () => {
     message: '',
   });
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: React.FormEvent<HTMLFormElement>) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     fetch('/', {
       method: 'POST',
